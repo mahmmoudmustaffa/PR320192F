@@ -98,12 +98,16 @@ public class LoginFrame extends JFrame{
 
         @Override
         public void itemStateChanged(ItemEvent e) {
-            if(e.getSource() == checkBoxBold)
+            if(checkBoxBold.isSelected() &&
+                    checkBoxItalic.isSelected())
                 textFieldData.setFont(
-                        new Font("Arial", Font.BOLD, 18));
-            else if(e.getSource() == checkBoxItalic)
+                        new Font("Arial", Font.BOLD+Font.ITALIC, 18));
+            else if(checkBoxItalic.isSelected())
                 textFieldData.setFont(
                         new Font("Arial", Font.ITALIC, 18));
+            else if(checkBoxBold.isSelected())
+                textFieldData.setFont(
+                        new Font("Arial", Font.BOLD, 18));
             else
                 textFieldData.setFont(
                         new Font("Arial", Font.PLAIN, 12));

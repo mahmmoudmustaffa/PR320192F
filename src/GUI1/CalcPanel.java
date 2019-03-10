@@ -9,6 +9,9 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.AbstractButton;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -17,7 +20,7 @@ import javax.swing.JTextField;
  *
  * @author aashgar
  */
-public class CalcPanel extends JPanel{
+public class CalcPanel extends JPanel implements ActionListener{
     private JButton[] keyButtons;
     private JTextField textFieldLCD;
     private JPanel keysPanel;
@@ -35,6 +38,7 @@ public class CalcPanel extends JPanel{
         keyButtons[15] = new JButton(".");
         for(JButton button: keyButtons){
             button.setFont(new Font("Arial", Font.BOLD, 14));
+            button.addActionListener(this);
             keysPanel.add(button);
         }
         setLayout(new BorderLayout());
@@ -44,6 +48,12 @@ public class CalcPanel extends JPanel{
         add(textFieldLCD, BorderLayout.NORTH);
         add(keysPanel, BorderLayout.CENTER);
         
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        textFieldLCD.setText(
+                ((AbstractButton) e.getSource()).getText());
     }
     
 }

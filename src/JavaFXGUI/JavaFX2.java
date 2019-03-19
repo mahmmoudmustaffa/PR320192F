@@ -5,7 +5,6 @@
  */
 package JavaFXGUI;
 
-import java.util.List;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -37,7 +36,7 @@ public class JavaFX2 extends Application{
                 getResource("ListViewNames.fxml"));
         loader.setController(this);
         Parent parent = loader.load();
-        Scene scene = new Scene(parent,200,200);
+        Scene scene = new Scene(parent,270,300);
         primaryStage.setScene(scene);
         primaryStage.show();
     }

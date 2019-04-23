@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="194.0" prefWidth="269.0" style="-fx-background-color: magenta;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DB4.OptionsPageController">
+   <children>
+      <Button fx:id="buttonAddStudent" layoutX="88.0" layoutY="65.0" mnemonicParsing="false" onAction="#handleButtonAddStudent" prefHeight="25.0" prefWidth="94.0" text="Add Student" />
+      <Button fx:id="buttonViewStudents" layoutX="88.0" layoutY="23.0" mnemonicParsing="false" onAction="#handleButtonViewStudents" prefHeight="25.0" prefWidth="94.0" text="View Students" />
+      <Button layoutX="93.0" layoutY="113.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" text="..." />
+   </children>
+</AnchorPane>

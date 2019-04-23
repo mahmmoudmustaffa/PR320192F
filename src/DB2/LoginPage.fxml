@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane hgap="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="106.0" prefWidth="331.0" style="-fx-background-color: cyan;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DB4.LoginPageController">
+  <columnConstraints>
+    <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="144.0" minWidth="10.0" prefWidth="88.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="213.0" minWidth="10.0" prefWidth="209.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label text="Login Name: ">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label text="Password:" GridPane.rowIndex="1">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textFieldLoginName" prefHeight="25.0" prefWidth="206.0" GridPane.columnIndex="1">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <PasswordField fx:id="textFieldPassword" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </PasswordField>
+      <Button fx:id="buttonOK" mnemonicParsing="false" onAction="#handleButtonOK" prefHeight="25.0" prefWidth="58.0" text="OK" GridPane.rowIndex="2">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonExit" mnemonicParsing="false" onAction="#handleButtonExit" prefHeight="25.0" prefWidth="59.0" text="Exit" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </children>
+</GridPane>

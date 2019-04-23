@@ -14,8 +14,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
@@ -23,15 +21,11 @@ import javafx.stage.Stage;
  *
  * @author aashgar
  */
-public class LoginPageController implements Initializable {
+public class OptionsPageController implements Initializable {
     @FXML
-    private TextField textFieldLoginName;
+    private Button buttonAddStudent;
     @FXML
-    private PasswordField textFieldPassword;
-    @FXML
-    private Button buttonOK;
-    @FXML
-    private Button buttonExit;
+    private Button buttonViewStudents;
 
     /**
      * Initializes the controller class.
@@ -42,22 +36,18 @@ public class LoginPageController implements Initializable {
     }    
 
     @FXML
-    private void handleButtonOK(ActionEvent event)throws Exception{
-        DbConnection adbConnection = DbConnection.getdbConnection();
-        if(adbConnection.verifyUser(textFieldLoginName.getText(),
-                textFieldPassword.getText())){
-        Parent root = FXMLLoader.load(getClass().
-                getResource("OptionsPage.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = FXMainApp.getStage();
-        stage.setScene(scene);
-        stage.show();
-        }
+    private void handleButtonAddStudent(ActionEvent event) {
     }
 
     @FXML
-    private void handleButtonExit(ActionEvent event) {
-       System.exit(0);
+    private void handleButtonViewStudents(ActionEvent event) 
+            throws Exception{
+        Parent root = FXMLLoader.load(getClass().
+                getResource("StudentsView.fxml"));
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
     }
     
 }

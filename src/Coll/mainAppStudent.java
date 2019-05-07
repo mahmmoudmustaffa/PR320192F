@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Comparator;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -21,7 +22,10 @@ public class mainAppStudent {
             new Student("Alaa", "IS", 79.3),
             new Student("Zahra", "ART", 99.1),
             new Student("Ghada", "ENG", 60.77),
-            new Student("Iman", "PRG", 100.00)          
+            new Student("Iman", "PRG", 100.00),
+            new Student("Wlaa", "CB", 82.3),
+            new Student("Wlaa", "IS", 82.3),
+            new Student("Amal", "ENG", 60.77),
         };
         List<Student> studentsList = 
                 new ArrayList<>(Arrays.asList(students));
@@ -44,14 +48,15 @@ public class mainAppStudent {
                 .average()
                 .getAsDouble();
         
-       System.out.println("The Average of all grades"); 
+       System.out.println("\nThe Average of all grades"); 
         System.out.println(avg);
         
-        System.out.println("Sorted Students"); 
+        System.out.println("\nSorted Students"); 
         studentsList.stream()
                 .sorted(Comparator.comparing(Student::getGrade))
                 .forEach(System.out:: println);
-        System.out.println("Stdents with grade >= 80"); 
+        
+        System.out.println("\nStdents with grade 60 to 80"); 
         studentsList.stream()
                 .filter(s -> {
                     if(s.getGrade() > 60 && s.getGrade() <= 80)
@@ -60,8 +65,29 @@ public class mainAppStudent {
                         return false;
                 })
                 .forEach(System.out:: println);
+        System.out.println("\nSorting by name then by major");
+      studentsList.stream()
+              .sorted(Comparator.comparing(Student::getName)
+              .thenComparing(Student::getMajor))
+              .forEach(System.out:: println);
         
-        
+      System.out.println("\nGrouping by Major");
+      studentsList.stream()
+              .collect(Collectors.groupingBy(Student::getMajor))
+              .forEach((major,studMajor)->{
+              System.out.println(major);
+              studMajor.forEach(student -> 
+                      System.out.printf("%30s\n",student));
+              });
+      System.out.println("\nCounting number of students in Major");
+      studentsList.stream()
+              .collect(Collectors.groupingBy(Student::getMajor,
+                      Collectors.counting()))
+              .forEach((major,count)->{
+                  System.out.println("Major: " + major +
+                          " Has count of: " + count);
+                  
+              });
     }
     
 }

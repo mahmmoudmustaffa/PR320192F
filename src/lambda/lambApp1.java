@@ -21,10 +21,14 @@ public class lambApp1 {
                 .sorted()
                 .forEach((x -> System.out.println(x)));
 
-        
+        myOperation2 op2 = ()-> System.out.println("test");
+        op2.operation();
     }
     
     interface myOperation<T>{
         T operation(T x, T y);
+    }
+    interface myOperation2{
+        void operation();
     }
 }
